@@ -1,2 +1,11 @@
-numpy
-torch
+# Core dependencies for Flappy Bird DQN
+numpy>=1.21.0
+torch>=2.0.0
+pygame>=2.5.0
+matplotlib>=3.5.0
+
+# Optional dependencies for enhanced functionality
+# Uncomment if you want additional features:
+# tensorboard>=2.10.0  # For training visualization
+# opencv-python>=4.6.0  # For advanced image processing
+# pillow>=9.0.0  # For image manipulation
