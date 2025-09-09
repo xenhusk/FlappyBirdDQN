@@ -60,9 +60,20 @@ pip install -r requirements.txt
 
 ## 🎮 Usage
 
+### Quick Start - Play the Game
+
+Want to play Flappy Bird yourself? Simply run:
+```bash
+python flappy_bird_game.py
+```
+
+**Game Controls:**
+- **SPACE**: Flap (jump) / Start game / Restart
+- **ESC**: Quit game
+
 ### Training
 
-Train the agent with optimized parameters:
+Train the AI agent with optimized parameters:
 ```bash
 cd src
 python train.py --mode train --episodes 5000 --render-mode none
@@ -72,7 +83,19 @@ python train.py --mode train --episodes 5000 --render-mode none
 - `--episodes`: Number of training episodes (default: 5000)
 - `--render-mode`: `none` (fast), `fast` (occasional), `human` (full visualization)
 
-### Evaluation
+### Human Play
+
+Play the game yourself:
+```bash
+python flappy_bird_game.py
+```
+
+**Controls:**
+- **SPACE**: Flap (jump)
+- **ESC**: Quit game
+- **SPACE**: Start new game (on start/game over screen)
+
+### AI Evaluation
 
 Watch the trained agent play:
 ```bash
