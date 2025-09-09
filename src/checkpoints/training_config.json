@@ -1,0 +1,12 @@
+{
+  "obs_dim": 8,
+  "n_actions": 2,
+  "episodes": 3000,
+  "batch_size": 256,
+  "buffer_capacity": 200000,
+  "eps_start": 1.0,
+  "eps_end": 0.01,
+  "eps_decay": 0.995,
+  "target_update_freq": 100,
+  "timestamp": "2025-09-10T02:11:11.628697"
+}
