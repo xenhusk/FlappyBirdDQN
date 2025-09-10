@@ -46,29 +46,29 @@ class Bird:
         inner_radius = self.radius - 3
         pygame.draw.circle(screen, (255, 255, 100), (int(self.x), int(self.y)), inner_radius)
         
-        # Draw eye (facing left - direction of flight) - positioned on the front of the bird
-        eye_x = int(self.x - 8)  # Further left to be on the front
+        # Draw eye (facing right - direction of flight) - positioned on the front of the bird
+        eye_x = int(self.x + 8)  # Move to the right side (front of bird)
         eye_y = int(self.y - 5)
         pygame.draw.circle(screen, WHITE, (eye_x, eye_y), 5)
-        pygame.draw.circle(screen, BLACK, (eye_x - 1, eye_y), 2)
+        pygame.draw.circle(screen, BLACK, (eye_x + 1, eye_y), 2)  # Pupil slightly to the right
         
-        # Draw beak (pointing left - direction of flight) - positioned at the front
-        beak_x = int(self.x - self.radius - 2)  # Positioned at the very front
+        # Draw beak (pointing right - direction of flight) - positioned at the front
+        beak_x = int(self.x + self.radius)  # Start at the edge of the bird's body
         beak_y = int(self.y)
-        beak_points = [(beak_x, beak_y),
-                       (beak_x - 10, beak_y - 3),
-                       (beak_x - 10, beak_y + 3)]
+        beak_points = [(beak_x, beak_y - 4),      # Top of beak base
+                    (beak_x + 12, beak_y),      # Tip of beak (extends to the right)
+                    (beak_x, beak_y + 4)]       # Bottom of beak base
         pygame.draw.polygon(screen, RED, beak_points)
         
-        # Draw wing for more detail - positioned on the back/right side
-        wing_x = int(self.x + 5)
+        # Draw wing for more detail - positioned on the back/left side
+        wing_x = int(self.x - 5)  # Move to left side (back of bird)
         wing_y = int(self.y + 2)
         pygame.draw.ellipse(screen, (200, 200, 0), (wing_x - 6, wing_y - 3, 12, 6))
         
-        # Draw tail feathers for better direction indication
-        tail_x = int(self.x + self.radius - 2)
+        # Draw tail feathers for better direction indication - at the back (left side)
+        tail_x = int(self.x - self.radius + 2)  # Position at the back (left side)
         tail_y = int(self.y)
-        pygame.draw.ellipse(screen, (180, 180, 0), (tail_x, tail_y - 2, 8, 4))
+        pygame.draw.ellipse(screen, (180, 180, 0), (tail_x - 8, tail_y - 2, 8, 4))  # Extend to the left
         
     def get_rect(self):
         return pygame.Rect(self.x - self.radius, self.y - self.radius, 
